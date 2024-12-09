@@ -1,0 +1,225 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "James Universal Hub V3 ⚒️",
+    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+    LoadingTitle = "Loading James Universal Hub V3 ⚒️...",
+    LoadingSubtitle = "Conquered by 01zx",
+    Theme = "Ocean", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+ 
+    DisableRayfieldPrompts = false,
+    DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+ 
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "Jamessillyhub"
+    },
+ 
+    Discord = {
+       Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
+       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+ 
+    KeySystem = true, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "James Universal Hub V3 | Key System",
+       Subtitle = "pls enter the key you were given by buyer or owner",
+       Note = "to get the key is in our website! link: jameshub.bio.link", -- Use this to tell the user how to get a key
+       FileName = "Key Interaction", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+       GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = {"v3isgodmode", "JamesTeamKey", "james", "James"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+    }
+ })
+
+ local MainTab = Window:CreateTab("🏠 Home", nil) -- Title, Image
+ local MainSection = MainTab:CreateSection("fun stuff")
+ 
+ Rayfield:Notify({
+   Title = "message from owner!",
+   Content = "thank you for using juhv3, let us know if any bugs are there. We will work on it! 😁🔨",
+   Duration = 12,
+   Image = nil,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+
+ local Slider = MainTab:CreateSlider({
+    Name = "WalkSpeed 🏃‍♂️‍➡️",
+    Range = {16, 1000},
+    Increment = 1,
+    Suffix = "Speed",
+    CurrentValue = 16,
+    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (Value)
+    end,
+ })
+ 
+ local Slider = MainTab:CreateSlider({
+    Name = "JumpPower 🏃‍♂️‍➡️",
+    Range = {50, 1000},
+    Increment = 1,
+    Suffix = "Jump",
+    CurrentValue = 50,
+    Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = (Value)
+    end,
+ })
+
+ local Button = MainTab:CreateButton({
+    Name = "Infinite Yeild",
+    Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+    end,
+ })
+
+ local Button = MainTab:CreateButton({
+    Name = "Chat Bypass",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AlgariBot/lua/refs/heads/Lua-Script-Executor/LocalNeverPatchedBypass.txt"))()
+    end,
+ })
+
+ local Button = MainTab:CreateButton({
+    Name = "Script Hub V3",
+    Callback = function()
+        loadstring(game:HttpGet("https://github.com/scripthubekitten/eee/raw/refs/heads/main/eezas", true))()
+    end,
+ })
+
+ local Button = MainTab:CreateButton({
+    Name = "Universal AimBot",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/AirHub/main/AirHub.lua"))()
+    end,
+ })
+
+ local ArsenalTab = Window:CreateTab("🔫 Arsenal", nil) -- Title, Image
+ local ArsenalSection = ArsenalTab:CreateSection("Scripts")
+
+ local Button = ArsenalTab:CreateButton({
+    Name = "Owl Hub",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
+    end,
+ })
+
+ local Button = ArsenalTab:CreateButton({
+    Name = "VG Hub",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+    end,
+ })
+
+ local BloxFruitsTab = Window:CreateTab("🍉 Blox Fruits", nil) -- Title, Image
+ local BloxFruitsSection = BloxFruitsTab:CreateSection("blox fruits insane farms")
+
+local Button = BloxFruitsTab:CreateButton({
+    Name = "Hyper Hab [key is OEPljzc1CG]",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DookDekDEE/Hyper/main/script.lua"))()
+    end,
+ })
+
+ local Button = BloxFruitsTab:CreateButton({
+    Name = "Naoki Hub (KEY)",
+    Callback = function()
+        loadstring(game:HttpGet("https://naokihub.vercel.app",true))()
+    end,
+ })
+
+ local DaHoodTab = Window:CreateTab("(⚠️) Da Hood", nil) -- Title, Image
+ local DaHoodSection = DaHoodTab:CreateSection("dh exploits are crazy detected")
+
+local Button = DaHoodTab:CreateButton({
+    Name = "Da Hood Lock",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
+    end,
+ })
+
+ local Button = DaHoodTab:CreateButton({
+    Name = "Swag Mode",
+    Callback = function()
+        print('Executed from Execute, redirecting too git')
+
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'))() 
+    end,
+ })
+
+ local MM2Tab = Window:CreateTab("🔪 Murder Mystery 2", nil) -- Title, Image
+ local MM2Section = MM2Tab:CreateSection("mm2 knife silly shit")
+
+ local Button = MM2Tab:CreateButton({
+    Name = "Vynixu's MM2 Script",
+    Callback = function()
+        loadstring(game:GetObjects("rbxassetid://4001118261")[1].Source)()
+    end,
+ })
+
+ local Button = MM2Tab:CreateButton({
+    Name = "CHEATER.FUN Admin Panel",
+    Callback = function()
+        loadstring(game:HttpGet('https://pastebin.com/raw/e89Mn4Ec'))()
+    end,
+ })
+
+local PrisonTab = Window:CreateTab("👮 Prison Life", nil) -- Title, Image
+local PrisonSection = PrisonTab:CreateSection("first start when we exploited at")
+
+ local Button = PrisonTab:CreateButton({
+   Name = "Tbao Hub",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaohubPrisonLife"))()
+   end,
+})
+ 
+ local RivalsTab = Window:CreateTab("🎈 Rivals", nil) -- Title, Image
+ local RivalsSection = RivalsTab:CreateSection("rivals is a arsenal copy")
+
+ local Button = RivalsTab:CreateButton({
+    Name = "Rivals Lock",
+    Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
+    end,
+ })
+--local(game:HttpGet("https://pastebin.com/raw/DtwLVRdP"))()
+
+local SolsRngTab = Window:CreateTab("🔥 Sol's Rng", nil) -- Title, Image
+local SolsRngTabSection = SolsRngTab:CreateSection("")
+
+local Button = SolsRngTab:CreateButton({
+   Name = "ANTI-AFK",
+   Callback = function()
+      local(game:HttpGet("https://pastebin.com/raw/DtwLVRdP"))()
+   end,
+})
+
+ local CreditsTab = Window:CreateTab("💫 Credits", nil) -- Title, Image
+ local CreditsTabSection = CreditsTab:CreateSection("")
+
+ local Button = CreditsTab:CreateButton({
+    Name = "SEE OUR PEOPLE WHO HELPED US 😄",
+    Callback = function()
+        local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+        local Window = Library.CreateLib("credits", "DarkTheme")
+        
+        local mainTab = Window:NewTab("credits")
+        
+        local mainSection = mainTab:NewSection("Owner - 01zx, Scripter - 01zx, and last but not least Seller/Advertiser - Tsbg pro aka. ghost21415")
+
+        local mainSection = mainTab:NewSection("thanks for reading 😎")
+       
+    end,
+ })
+
